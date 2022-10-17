@@ -1,0 +1,24 @@
+<div class="card">
+            <div class="card-body">
+                <div id="" class="row m-0 p-0">
+                    <?php
+                        include ("../PHP/conexion.php");
+                        $query = "SELECT * FROM imagenes";
+                        $resultado = $conexion->query($query);
+                        while ($row = $resultado->fetch_assoc())
+                        {
+                    ?>
+                        <div class="card card_productos m-1 p-0">
+                            <img src="data:image/*;base64,<?php echo base64_encode($row['imagen'])?>" class="card-img-top " alt="..." >
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row['nombre']?></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">comprar</a>
+                            </div>
+                        </div>
+                    <?php        
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>

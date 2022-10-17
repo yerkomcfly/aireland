@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@600&display=swap');
+
+    body
+    {
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .tipografia1
+    {
+        color: rgb(255, 255, 255);
+        position: relative;
+        bottom: -5px;
+        font-family: "Bebas Neue";
+        letter-spacing: 2px;
+    }
+    .tipografia1_2
+    {
+        
+        color: rgb(255, 255, 255);
+        position: relative;
+        bottom: -4px;
+        letter-spacing: 2px;
+        font-family: "Bebas Neue";
+        
+    }
+    .tipografia2{
+        font-family: 'Readex Pro', sans-serif;
+        font-size: 80%;
+        position: relative;
+        top: 5px;
+    }
+    
+    .transicion1
+    {
+        
+        transition: all 0.4s;
+    }
+    
+    .fx2
+    {
+        font-size: 0%;
+        
+    }
+    .fx2_act
+    {
+        font-size: 90%;
+        
+    }
+
+@media screen and (max-width: 1920px) { 
+    
+    /*HEADER*/
+    .botones_nav
+    {
+        border-radius: 0px;
+        border: none;
+
+    }
+    #text_botones_nav:hover
+    {
+        color: rgb(2, 117, 126);
+    }
+    #text_botones_nav
+    {
+        color: rgb(0, 0, 0);
+        position: relative;
+        bottom: -5px;
+        font-family: "Bebas Neue";
+        letter-spacing: 2px;
+        transition: all 0.3s;
+    }
+    #fondo_header
+    {
+        background-color: aliceblue;
+    }
+    #fondo_header_2
+    {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .columnas_header
+    {  
+        border-right: 2px solid rgb(0, 211, 248);
+    }
+    .icon_header
+    {
+        position: relative;
+        top: 3px;
+        font-size: 20px;
+    }
+    #fondo_header_nav2
+    {
+        background-color: black;
+    }
+    
+    .despliegue_tienda_desc
+    {
+        
+        background-color: rgb(255, 255, 255);
+        box-shadow:  0 10px 20px 0 rgba(0, 0, 0, 0.178);
+        position: absolute;
+        top: -300%; z-index: 1;
+        width: 300px;
+        opacity: 0;
+    }
+    .despliegue_tienda_act
+    {
+        background-color: rgb(255, 255, 255);
+        box-shadow:  0 10px 20px 0 rgba(0, 0, 0, 0.178);
+        position: absolute;
+        top: 100%; z-index: 1;
+        width: 300px;  
+        opacity: 100%;
+    }
+    
+    #fondo_columnaTienda_header
+    {
+        position: relative;
+    }
+    .btn_en_tienda
+    {
+        border-radius: 0;
+        border: 0;
+        
+        
+    }
+    .btn_en_tienda:hover
+    {
+        
+        background-color: rgb(235, 235, 235);
+    }
+    .titulosEnTienda
+    {
+        border-bottom: 3px solid rgb(207, 207, 207);
+    }
+    nav > ul > .col
+    {
+        list-style: none;
+        padding: 0;
+        position: relative;
+    }
+    nav  ul  li ul
+    {
+        list-style: none;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        z-index: 2;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+    nav  ul  .col:hover  ul
+    {
+        
+        visibility: visible;
+        opacity: 1;
+    }
+    .submenu
+    {
+        background-color: white;
+        box-shadow:  0 10px 20px 0 rgba(0, 0, 0, 0.178);
+        width: 250px;
+    }
+
+    
+
+
+    /*CUERPO*/
+    .cuadrado
+    {
+        width: 500px;
+        height: 10px;
+        background-color: aquamarine;
+        z-index: 2;
+    }
+    
+
+    
+
+    .cuadro_imagen_carrusel
+    {
+        height: 600px;
+        
+    }
+    
+    .carousel-control-prev, .carousel-control-next
+    {
+        width: 100px;
+    }
+    #icon_carrusel
+    {
+        color: rgb(17, 17, 17);
+        font-size: 40px;
+        font-weight: 500;
+    }
+    .icon_redes_sociales
+    {
+        color: rgb(255, 255, 255);
+        transition: all 0.4s;
+        
+    }
+    .icon_redes_sociales:hover
+    {
+        color: rgb(148, 148, 148);
+        
+    }
+
+    #boton_promocion1
+    {
+        border-radius: 30px;
+        color: rgb(255, 255, 255);
+        border: 4px solid rgb(255, 255, 255);
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        transition: all linear 0.2s;
+    }
+    #boton_promocion1:hover
+    {
+        
+        background-color: rgba(0, 0, 0, 0.596);
+        
+    }
+    .fondo_container_tienda
+    {
+        background-color: rgb(209, 209, 209);
+        position: relative;
+        display: grid;
+        grid-template-columns: 22em 1fr;
+    }
+    #container_productos
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card_productos
+    {
+        width: 315px;
+    }
+    #menu-filtros
+    {
+        height: 200px;
+    }
+    
+
+
+
+
+
+
+    .fondo_footer
+    {
+        background-color: black;
+        height: 150px;
+        position: absolute;
+        top: 100%;
+    }
+    .text-footer
+    {
+        color: rgb(255, 255, 255);
+        display: flex;
+    }
+}
+
