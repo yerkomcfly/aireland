@@ -102,7 +102,7 @@
             </div>
             <div class="col">
                 <li id="" class="nav-item my-2 px-0 ">                   
-                    <a id="" class="btn w-100 py-1 botones_nav" href="paginas/contacto.html" role="button"><h4 id="text_botones_nav"><span id="" class="material-symbols-outlined icon_header">phone_in_talk</span> CONTACTO</h4></a>
+                    <a id="" class="btn w-100 py-1 botones_nav" href="contacto.html" role="button"><h4 id="text_botones_nav"><span id="" class="material-symbols-outlined icon_header">phone_in_talk</span> CONTACTO</h4></a>
                 </li>
             </div>
             
@@ -119,7 +119,7 @@
         
         <div id="menu-filtros" class="card m-2">
             <div class="card-body">
-                <input class="border-0 shadow" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar...">
+                <input class="border-0 shadow w-100" type="search" id="buscar" placeholder="Buscar...">
             </div>
         </div>
         <div class="card  my-2 me-2">
@@ -174,7 +174,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
   </script>
-  <script src="../public/procedimientos.js"></script>
+  <script type="module" src="../public/procedimientos.js"></script>
 </body>
 
 

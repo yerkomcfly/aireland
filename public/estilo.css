@@ -247,7 +247,10 @@
     {
         height: 200px;
     }
-    
+    .filter
+    {
+        display: none;
+    }
 
 
 
