@@ -3,23 +3,21 @@
 session_start();
 if ($_SESSION ["rol"] == "admin")
 {
+    session_destroy();   
     include ("conexion.php");
-    echo $_SESSION ["rol"]."\n";
-    echo $_SESSION ["id"]."\n";
     
+    $id = $_GET["id"];
     $nombre = $_POST['nombre'];
-    echo $nombre;
 
-
-    /*
-    $query = "UPDATE imagenes SET nombre =  WHERE id = ";
+    
+    $query = "UPDATE imagenes SET nombre = '$nombre'  WHERE id = $id";
     $resultado = $conexion->query($query);
     if (!$resultado)
         echo "Error";
-    */
-}
-/*
-session_destroy();   
 
-header("Location: ../paginas/admin.php" );*/
+}
+
+   
+
+header("Location: ../paginas/admin.php" );
 ?>

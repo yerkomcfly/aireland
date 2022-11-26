@@ -78,7 +78,13 @@
             <div class="col-4">
                 <form action="../PHP/subir_archivos.php" method="post" enctype="multipart/form-data">
                     <div class="input-group mt-3">
+                        <input type="number" class="form-control" placeholder="Codigo del producto" aria-label="Codigo del producto" name="codigo">
+                    </div>
+                    <div class="input-group mt-3">
                         <input type="text" class="form-control" placeholder="Nombre del producto" aria-label="Nombre del archivo" name="nombre">
+                    </div>
+                    <div class="input-group mt-3">
+                        <input type="number" class="form-control" placeholder="Marca" aria-label="marca" name="marca">
                     </div>
                     <div class="input-group mt-3">
                         <input type="file" class="form-control" id="inputGroupFile01" name="archivo">
@@ -92,40 +98,48 @@
         <div class="row">
             <?php
                 include ("../PHP/conexion.php");
-                $query = "SELECT * FROM imagenes";
-                $resultado = mysqli_query($conexion, $query);
-                while ($row = mysqli_fetch_array($resultado))
+                $query2 = "SELECT * FROM productos";
+                $resultado2 = mysqli_query($conexion, $query2);
+                while ($row2 = mysqli_fetch_array($resultado2))
                 {
-                
-            ?>
-                <div class="card card_productos m-1 p-0">
-                    <img src="data:image/*;base64,<?php echo base64_encode($row['imagen'])?>" class="card-img-top " alt="..." >
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['nombre']?></h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $row['id'];?>">Editar</button>                         
-                        <a href="../PHP/eliminar.php?id=<?php echo $row['id'];?>" class="btn btn-danger">Eliminar</a>
-                        <!-- Modal -->
-                            <div class="modal fade" id="Modal<?php echo $row['id'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <input type="text" class="form-control" value="<?php echo $row['nombre'];?>" aria-label="Nombre del archivo" name="nombre">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    $id_imagen = $row2['id_imagen'];
+                    $query = "SELECT * FROM imagenes WHERE $id_imagen";
+                    $resultado = mysqli_query($conexion, $query);
+                    $row = mysqli_fetch_array($resultado);
+                ?>
+                <div class="col-3">
+                    <div class="card m-1 p-0">
+                        <img src="data:image/*;base64,<?php echo base64_encode($row['imagen'])?>" class="card-img-top " alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $row2['nombre_producto']?></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $row2['id_producto'];?>">Editar</button>                         
+                            <a href="../PHP/eliminar.php?id=<?php echo $row2['id_producto'];?>" class="btn btn-danger">Eliminar</a>
+                            <!-- Modal -->
+                                <div class="modal fade" id="Modal<?php echo $row2['id_producto'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form action="../PHP/editar.php?id=<?php echo $row2['id_producto'];?>" method="POST">
+                                        <div class="modal-header">                           
+                                        
+                                        
+                                            <input type="text" class="form-control" value="<?php echo $row2['nombre_producto'];?>" aria-label="Nombre del archivo" name="nombre">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="modal-body">
-                                    ...
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary">Guardar</button>
-                                </div>
-                                </div>
-                            </div>
                             </div>
                     </div>
                 </div>
-                
             <?php        
                 }
             ?>

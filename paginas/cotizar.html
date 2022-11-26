@@ -58,36 +58,37 @@
   <main>
     <div class="container">
         <div class="row mt-5 pt-5">
-            <div class="col"></div>
-            <div class="col-8 shadow me-2">
+            <div class="col-2"></div>
+            <div class="col-8 shadow me-2 px-5">
                 <div class="row p-0 mt-5">
-                    <h6 class="montserrat bold-7 text-center">Contacto</h6>
-                    <h5 class="montserrat bold-7 text-center">Nos comunicaremos contigo ;)</h5>
+                    <h6 class="montserrat bold-7 text-center">Cotiza con nosotros</h6>
+                    <h5 class="montserrat bold-7 text-center">Envia las fotos de la zona en donde quieras instalar!!</h5>
                 </div>
                 <form action="../PHP/correos.php" method="POST" enctype="multipart/form-data">
-                    <div class="form-floating mt-4 mx-5">
+                    <div class="form-floating p-0 m-0 mt-4">
                         <input type="text" class="form-control " name="nombre" id="floatingInput" placeholder="Nombre" required>
                         <label for="floatingInput"><p class="montserrat">Nombre</p></label>
                     </div>
                     
-                    <div class="row p-0 m-0 mx-5">
-                        <div class="col p-0 m-0 pe-1">
-                            <div class="form-floating mt-2 ">
+                    <div class="row p-0 m-0">
+                        <div class="col p-0 p-0 m-0 pe-1">
+                            <div class="form-floating mt-2">
                                 <input type="email" class="form-control" name="correo" id="floatingInput" placeholder="ejemplo@gmail.com" required>
                                 <label for="floatingInput"><p class="montserrat">Correo</p></label>
                             </div>
                         </div>
                         <div class="col p-0 m-0 ps-1">
-                            <div class="form-floating mt-2 ">
-                                <input type="email" class="form-control" name="telefono" id="floatingInput" placeholder="ejemplo@gmail.com" required>
-                                <label for="text"><p class="montserrat">Telefono</p></label>
+                            <div class="form-floating mt-2">
+                                <input type="text" class="form-control" name="telefono" id="floatingInput" placeholder="ejemplo@gmail.com" required>
+                                <label for="floatingInput"><p class="montserrat">Telefono</p></label>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="form-floating mt-2 mx-5">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea required>
-                        <label for="floatingTextarea2">Consulta</label>
+                    <div class="input-group p-0">
+                        
+                        <input type="file" multiple="true" class="form-control mt-2 montserrat" id="inputGroupFile01" name="archivo[]" accept="image/*" required>
+                        
                     </div>
                     <div class="row p-0 mt-2 d-flex justify-content-center">
                        <button type="submit" class="btn mt-2 mb-4 boton3 border- montserrat text-white bold-5" name="enviar">Enviar</button> 
@@ -95,33 +96,9 @@
                     
                 </form>
             </div>
-
-            <div class="col-3 c-blanco shadow p-0 m-0 pb-5 ps-2">
-                <div class="row p-0 m-0 mt-5">
-                    <div class="col-2 p-0 m-0 d-flex justify-content-center"><img src="../imagenes/ubicacion.png" alt="" class="img-fluid" style="width: 27px;"></div>
-                    <div class="col-8 p-0 m-0 ">
-                        <h4 class="montserrat bold-6 p-0 m-0">Dónde estamos</h4>
-                    </div>
-                </div>
-                <p class="montserrat bold-5 mt-2 ms-5 ps-2 ">236 5th SE Avenue, New York NY10000, United States</p>
-                <div class="row p-0 m-0 mt-5">
-                    <div class="col-2 p-0 m-0 d-flex justify-content-center"><img src="../imagenes/telefono.svg" alt="" class="img-fluid" style="width: 23px;"></div>
-                    <div class="col-8 p-0 m-0 ">
-                        <h4 class="montserrat bold-6 p-0 m-0">Teléfono</h4>
-                    </div>
-                </div>
-                <p class="montserrat bold-5 m-0 mt-2 ms-5 ps-2 ">Mobile: +(84) 546-6789</p>
-                <p class="montserrat bold-5 m-0 ms-5 ps-2 ">Hotline: +(84) 456-6789</p>
-                <div class="row p-0 m-0 mt-5">
-                    <div class="col-2 p-0 m-0 d-flex justify-content-center"><img src="../imagenes/reloj.svg" alt="" class="img-fluid" style="width: 22px;"></div>
-                    <div class="col-8 p-0 m-0 ">
-                        <h4 class="montserrat bold-6 p-0 m-0 ">Horario de Atención</h4>
-                    </div>
-                </div>
-                <p class="montserrat bold-5 m-0 mt-2 ms-5 ps-2 ">Monday-Friday: 9:00 - 22:00</p>
-                <p class="montserrat bold-5 m-0 ms-5 ps-2 ">Saturday-Sunday: 9:00 - 21:00</p>
-            </div>    
-        </div>
+            <div class="col-2"></div>
+               
+        </div> 
     </div>
              
 

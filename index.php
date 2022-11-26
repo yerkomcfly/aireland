@@ -21,171 +21,132 @@
 <body >
   <header>
     <!--nav1-->
-    <div id="fondo_header_nav2" class="container-fluid">
-        <div class="row">
-            <ul class="nav p-0 m-0">
-                <div class="col-3 d-flex flex-column p-0 m-0 ">
-                    <li class="nav-item d-flex justify-content-center">
-
+        <nav id="fondo_header" class="nav2 pt-3 pb-3">
+            <ul id="" class="p-0 m-0 d-flex">
+                <div class="col-4">
+                    <li id="" class="nav-item my-2 px-0 ">                   
+                        <a id="" class="btn w-100 py-1 botones_nav" href="index.php" role="button"><img src="imagenes/logo.svg" alt="logo" id="logo"></a>
                     </li>
                 </div>
-                
-                <div class="col-6 p-0 m-0 ">
-                    <div class="row py-1 m-0">
-                        <div id="" class="col d-flex flex-column p-0 m-0">
-                            <li class="nav-item d-flex justify-content-center">
-                                <h6 id="" class="tipografia1_2">+56976137638</h6>
-                            </li>
-                        </div>
-                        <div id="" class="col d-flex flex-column p-0 m-0">                   
-                            <li class="nav-item d-flex justify-content-center">
-                                <h6 id="" class="tipografia1_2">yiturra@utem.cl</h6>
-                            </li>
-                        </div>
-                        <div id="" class="col d-flex flex-column p-0 m-0">                   
-                            <li class="nav-item d-flex justify-content-center">
-                            </li>
-                        </div>
-                        <div id="" class="col d-flex flex-column p-0 m-0">                   
-                            <li class="nav-item d-flex justify-content-end">
-                                <a id="" class="btn border-0 py-0" href="#" role="button"><i id="" class="fa-brands fa-whatsapp icon_redes_sociales"></i></a>
-                                <a id="" class="btn border-0 py-0" href="#" role="button"><i id="" class="fa-brands fa-instagram icon_redes_sociales"></i></a>
-                                <a id="" class="btn border-0 py-0" href="#" role="button"><i class="fa-brands fa-facebook icon_redes_sociales"></i></a>
-                            </li>
-                        </div>
-                    </div>
+                <div class="col  align-self-end pb-3">
+                    <li id="" class="nav-item my-2 px-0 columnas_header ">                   
+                        <a id="" class="btn w-100 py-1 botones_nav" href="index.php" role="button"><h5 id="text_botones_nav">INICIO</h5></a>
+                    </li>
                 </div>
-                <div class="col-3 m-0 pe-5 d-flex justify-content-end">
-                    
+                <div class="col align-self-end pb-3">
+                    <li id="seccion_tienda" class="nav-item my-2 px-0 columnas_header">                   
+                    <a id="boton_tienda" class="btn w-100 py-1 botones_nav" href="paginas/tienda.php" role="button"><h5 id="text_botones_nav">TIENDA</h5></a>
+                    </li>
                 </div>
-                
-            </ul>
-        </div>
-    </div>
-    <!-------->
-    <!--nav2-->
-    <nav id="fondo_header" class="nav2">
-        <ul id="" class="p-0 m-0 d-flex">
-            <div class="col-3">
-                <li id="" class="nav-item my-2 px-0 ">                   
-                    <a id="" class="btn w-100 py-1 botones_nav" href="#" role="button"><h4 id="text_botones_nav">LOGO</h4></a>
-                </li>
-            </div>
-            <div class="col">
-                <li id="" class="nav-item my-2 px-0 columnas_header">                   
-                    <a id="" class="btn w-100 py-1 botones_nav" href="#" role="button"><h4 id="text_botones_nav">INICIO</h4></a>
-                </li>
-            </div>
-            <div class="col">
-                <li id="seccion_tienda" class="nav-item my-2 px-0 columnas_header">                   
-                <a id="boton_tienda" class="btn w-100 py-1 botones_nav" href="paginas/tienda.php" role="button"><h4 id="text_botones_nav"><span id="" class="material-symbols-outlined icon_header">storefront</span> TIENDA</h4></a>
-                    <ul class="submenu">
-                    <h6 class="tipografia2 text-start titulosEnTienda mx-3 pt-3">AIRES ACONDICIONADOS SPLIT</h6>   
-                    <li><a id="" class="btn btn_en_tienda w-100 h-100 p-0 m-0 " href="paginas/tienda.php" role="button"><h6 class="tipografia2 text-start py-3 px-4">INVERTER</h6></a></li>
-                    <li><a id="" class="btn btn_en_tienda w-100 h-100 p-0 m-0 " href="paginas/tienda.php" role="button"><h6 class="tipografia2 text-start py-3 px-4">ON/OFF</h6></a></li>
-                    </ul>
-                </li>
-            </div>
-            <div class="col">
-                <li id="" class="nav-item my-2 px-0 columnas_header">                   
-                    <a id="" class="btn w-100 py-1 botones_nav" href="#" role="button"><h4 id="text_botones_nav"><span id="" class="material-symbols-outlined icon_header">home_repair_service</span> SERVICIOS</h4></a>
-                    <ul class="submenu">
-                    <li><a id="" class="btn btn_en_tienda w-100 h-100 p-0 m-0 " href="" role="button"><h6 class="tipografia2 text-start py-3 px-4">DISTRIBUIDOR</h6></a></li>
-                    <li><a id="" class="btn btn_en_tienda w-100 h-100 p-0 m-0 " href="" role="button"><h6 class="tipografia2 text-start py-3 px-4">EMPRESAS</h6></a></li>
-                    </ul>
-                </li>
-            </div>
-            <div class="col">
-                <li id="" class="nav-item my-2 px-0 columnas_header">                   
-                    <a id="" class="btn w-100 py-1 botones_nav" href="#" role="button"><h4 id="text_botones_nav"><span class="material-symbols-outlined icon_header">calculate</span> COTIZAR</h4></a>
-                </li>
-            </div>
-            <div class="col">
-                <li id="" class="nav-item my-2 px-0 ">                   
-                    <a id="" class="btn w-100 py-1 botones_nav" href="paginas/contacto.html" role="button"><h4 id="text_botones_nav"><span id="" class="material-symbols-outlined icon_header">phone_in_talk</span> CONTACTO</h4></a>
-                </li>
-            </div>
-            
-            <div class="col-3"></div>      
-        </ul> 
-    </nav>  
-     
-    <!-------->
+
+                <div class="col align-self-end pb-3">
+                    <li id="" class="nav-item my-2 px-0 columnas_header">                   
+                        <a id="" class="btn w-100 py-1 botones_nav" href="#" role="button"><h5 id="text_botones_nav">COTIZAR</h5></a>
+                    </li>
+                </div>
+                <div class="col  align-self-end pb-3">
+                    <li id="" class="nav-item my-2 px-0 ">                   
+                        <a id="" class="btn w-100 py-1 botones_nav" href="paginas/contacto.html" role="button"><h5 id="text_botones_nav">CONTACTO</h5></a>
+                    </li>
+                </div>
+                <div class="col-4 "></div>      
+            </ul> 
+        </nav>  
+    <!--nav1-->
   </header>
 
   <main>
-    
-    <div class="container-fluid p-0 ">
-        <div class="row p-0 m-0">
-            
-            <div id="carouselExampleControls" class="carousel slide p-0" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  </div>
-
-
-                <div class="carousel-inner cuadro_imagen_carrusel">
-                    <div class="carousel-item active">
-                        <img src="imagenes/carrusel/A1.svg" alt="">
-                    </div>
-
-                  
-                </div>
-                
-                  
-                  
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev"></button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next"></button>
-              </div>
+    <div class="container-fluid p-0">
+    <!--CARRUSEL-->
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="imagenes/carrusel/A1.svg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="imagenes/carrusel/A1.svg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+    <!--CARRUSEL-->
+   </div>
 
 
     <div class="container">
-        <div class="cuadrado p-0 m-0 ">
-
+    <!--QUEHACEMOS-->
+        <div class="row mt-2">
+            <div class="col tarjeta1 p-0 m-0 shadow">
+                <img src="imagenes/quehacemos/image-5.svg" alt="" class="crop ">
+                <div class="row position-absolute bottom-0 end-0 mb-3 me-5 pe-3">
+                    <div class="row m-0 i-1 "><h2 class="montserrat mx-4 text-white i-1 bold-7">Climatización Hogar</h2></div>
+                    <div class="row m-0 i-1">
+                        <a  href="paginas/contacto.html" type="button" class=" boton1 i-1 p-0 mx-4 my-2">
+                            <h6 class="montserrat mx-5 text-white text-center bold-5 pt-3 pb-2">Saber más</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col tarjeta1 p-0 mx-2 shadow">
+                <img src="imagenes/quehacemos/image-6.svg" alt="" class="crop2">
+                <div class="row position-absolute bottom-0 end-0 mb-3">
+                    <div class="row m-0 i-1"><h2 class="montserrat mx-4 text-white i-1 bold-7">Mantenciones</h2></div>
+                    <div class="row m-0 i-1">
+                        <a  href="paginas/contacto.html" type="button" class=" boton1 i-1 p-0 mx-4 my-2">
+                            <h6 class="montserrat mx-5 text-white text-center bold-5 pt-3 pb-2">Saber más</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col tarjeta1 p-0 m-0 shadow">
+            <img src="imagenes/quehacemos/7.jpg" alt="" class="crop3">
+            <div class="row position-absolute bottom-0 end-0 mb-3">
+                    <div class="row m-0 i-1"><h2 class="montserrat mx-4 text-white i-1 bold-7 pe-5">Climatización Industrial</h2></div>
+                    <div class="row m-0 i-1">
+                        <a  href="paginas/contacto.html" type="button" class=" boton1 i-1 p-0 mx-4 my-2">
+                            <h6 class="montserrat mx-5 text-white text-center bold-5 pt-3 pb-2">Saber más</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-             
-    
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </main>
-  <footer>
-
-     
-    <div id="" class="fondo_footer w-100">
-
-    </div>
+        <div class="row mt-2 ">
+            <div class="col tarjeta2 p-0 m-0 shadow">
+                <img src="imagenes/quehacemos/8.jpg" alt="" class=" crop4">
+                <div class="row m-0 px-4 position-absolute top-50 start-0 translate-middle-y  w-100">
+                    <div class="row m-0 i-1 ">
+                        <h1  class="montserrat mx-4 text-white i-1 bold-7 d-flex justify-content-end">¿Eres instalador?</h1>
+                        <h5  class="montserrat mx-4 text-white i-1 bold-4 d-flex justify-content-end">Conoce nuestro catalogo de productos que tenemos para ti</h5>
+                    </div>
+                    <div class="row m-0 i-1 d-flex justify-content-end">
+                        <a  href="paginas/contacto.html" type="button" class=" boton1 i-1 p-0 mx-4 my-2 ">
+                            <h6 class="montserrat mx-5 text-white text-center bold-5 pt-3 pb-2">Saber más</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--QUEHACEMOS-->
    
+    </div>
+  </main>
+
+  <footer>
+    
   </footer>
-  
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
     integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
