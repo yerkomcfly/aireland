@@ -44,7 +44,7 @@
             <div id="logo_login" class="col-12 py-5  d-flex justify-content-center">
                 <img src="../imagenes/logo.svg" alt="" style="height: 200px; width: 200px;">
             </div>
-            <div id="login" class="col-3">
+            <div id="login" class="col-8 col-md-7 col-lg-4 col-xl-3">
                 <form>
                     <div class="mb-3 ">
                         <label for="exampleInputEmail1" class="form-label montserrat text-white">Email address</label>
