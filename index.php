@@ -133,7 +133,7 @@
     <div class="container-fluid p-0" >
     <!--CARRUSEL-->
         <div class="row m-0  f-invisible" style="">
-            <div id="carouselExampleIndicators" class="carousel slide p-0 border border-danger" data-bs-ride="carousel" >
+            <div id="carouselExampleIndicators" class="carousel slide p-0 " data-bs-ride="carousel" >
                 <div class="carousel-indicators" style="">
                     <?php 
                     while ($row = $resultado->fetch_assoc())
@@ -150,7 +150,7 @@
 
                         
                 </div>
-                <div class="carousel-inner border border-warning border-4">
+                <div class="carousel-inner">
                     <?php 
                     $cont=0;  
                     while ($row = $resultado2->fetch_assoc())
@@ -158,7 +158,7 @@
                             if ($cont==0){
                     ?>
                             <div class="carousel-item active w-100" style="">
-                                <img src="data:image/*;base64,<?php echo base64_encode($row['imagen']) ?>" alt="..." class="">
+                                <img src="data:image/*;base64,<?php echo base64_encode($row['imagen']) ?>" alt="..." class="w-100 h-100">
 
                             </div>
                     <?php   }
@@ -247,7 +247,7 @@
   </main>
 
   <footer>
-    
+    <?php include ("./footer/footer.php")?>
   </footer>
 
   <!-- Bootstrap JavaScript Libraries -->
