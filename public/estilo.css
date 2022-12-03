@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     body
     {
-        background-color: rgb(255, 255, 255);
+        background-color: #ffffff;
         position: relative;
         min-height: 100vh;
     }
@@ -128,6 +128,16 @@
         background-color: #F5F5F5;
         
     }
+    .f-celeste
+    {
+        background-color: #23A6F0;
+        
+    }
+    .f-gris2
+    {
+        background-color: #dbdbdb;
+        
+    }
     .c-gris
     {
         color: #9CA3AF;
@@ -139,6 +149,10 @@
     .c-celeste
     {
         color: #23A6F0;
+    }
+    .c-celeste-oscuro
+    {
+        color: #00333a;
     }
     .input-negro
     {
@@ -188,6 +202,10 @@
     {
         background-color: #000000;
     }
+    .f-invisible
+    {
+        background-color: #ffffff00;
+    }
     .form-control
     {
         border-width: 2px;
@@ -208,9 +226,26 @@
       input {
         caret-color: #077CA3;
       }
-
-
-
+    .object-0
+    {
+        object-fit: none;
+    }
+    .object-1
+    {
+        object-fit: contain;
+    }
+    .object-2
+    {
+        object-fit: cover;
+    }
+    .object-3
+    {
+        object-fit: fill; 
+    }
+    .object-4
+    {
+        object-fit: scale-down; 
+    }
     img
     {
         object-fit: cover;
@@ -218,12 +253,73 @@
     .mostrador-productos
     {
         
-        width: 611px;
+       
+    }
+    .quehacemos
+    {
+        
+        width: 200px;
         height: 520px;;
     }
-   
-      
+    .boton-nav
+    {
+        color: #ffffff;
+        transition: all 0.2s;
+    }
+    .boton-nav-hamburger
+    {
+        text-decoration-line: none;
+        color: #00272e;
+        transition: all 0.2s;
+    }
+    .boton-nav:hover
+   {
+        color: #5ba7b4;
+   }
+   .boton-nav-hamburger:hover
+   {
+        color: #5ba7b4;
+   }
+    
+    .display-none
+    {
+        display: none;
+    }
+    .menu-ham
+    {
+        background-color: #ffffff;
+        position: absolute;
+        z-index: 100;
+        animation-name: animacion1;
+        animation-duration: 0.5s;
+    }
+    .menu-filter
+    {
+        background-color: #ffffff;
+        position: fixed;
+        left: 25%;
+        z-index: 100;
+        animation-name: animacion1;
+        animation-duration: 0.5s;
+        
+    }
+    
+    @keyframes animacion1 {
+    0%   {top:100%}
+    100% {top:0%;display: none;}
+    }
 
+    
+    .modal-ordenar
+    {
+        height: 120px;
+        animation-name: animacion2;
+        animation-duration: 0.5s;
+    }
+    @keyframes animacion2 {
+        0%   {height:0px;}
+        100% {height:120px;}
+        }
 
 
 
@@ -251,33 +347,15 @@
         width: 150px;
         height: 150px;
     }
-    .botones_nav
-    {
-        border-radius: 0px;
-        border: none;
-
-    }
-    #text_botones_nav:hover
-    {
-        color: #077CA3;
-    }
-    #text_botones_nav
-    {
-        color: rgb(227, 244, 255);
-        position: relative;
-        bottom: -5px;
-        transition: all 0.2s;
-        font-family: 'Montserrat';
-        font-weight: 700;
-
-    }
+    
     #fondo_header
     {
-        background-color: rgb(0, 0, 0);
+        background: rgb(7,124,163);
+background: linear-gradient(150deg, rgba(7,124,163,1) 0%, rgba(240,58,105,1) 100%);
     }
     .columnas_header
     {  
-        border-right: 1px solid rgb(255, 255, 255);
+        border-right: 2px solid rgb(255, 255, 255);
     }
     .icon_header
     {
@@ -366,8 +444,8 @@
     }
     .tarjeta1
     {
-        background-color: black;
-        height: 500px;
+        
+        
         overflow: hidden;
         
         position: relative
@@ -489,8 +567,9 @@
     {
         background-color: #22BCF0;
         border-radius: 30px;
-        width: 150px;
         transition: all linear 0.1s;
+        text-decoration-line: none;
+        
     }
     .boton3:hover
     {
@@ -514,11 +593,7 @@
         
         
     }
-    .container_tienda
-    {
-        display: flex;
-        flex-wrap: wrap;
-    }
+    
     #container_productos
     {
         display: flex;
@@ -526,7 +601,7 @@
     }
     .card_productos
     {
-        height: 2000px;
+        
         border-radius: 15px;
 
     }
@@ -534,10 +609,7 @@
    {
     color: #9CA3AF;
    }
-    #menu-filtros
-    {
-        
-    }
+    
     .filter
     {
         display: none;
@@ -546,7 +618,10 @@
     {
         
     }
-
+    #modal_menu_filtro
+    {
+        height: 150px;
+    }
 
 
 
@@ -564,5 +639,80 @@
         height: 500px;
         width: 900px;
     }
+    #btn_lupa
+    {
+        transition: transform .2s;
+    }
+
+    #btn_lupa:hover
+    {
+        transform: scale(1.1);
+    }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media (max-width: 766px)
+    {
+        #menu-pc
+        {
+            
+            display: none;
+        }
+        #menu-movil
+        {
+            
+        }
+    }
+    @media (min-width: 767px)
+    {
+        #menu-pc
+        {
+            
+            
+        }
+        #menu-movil
+        {
+            
+            display: none;
+        }
+    }
+    @media (max-width: 1199px)
+    {
+        #menu_filtros_pc
+        {
+            display: none;
+        }
+    }
+    @media (min-width: 1200px)
+    {
+        #menu_filtros_movil
+        {
+            display: none;
+        }
+    }
+
+    
