@@ -37,7 +37,7 @@
 <body >
   <header>
     <!--nav1-->
-        <div id="modal-menu-hamburger" class="vh-100 vw-100 display-none">
+        <div id="modal-menu-hamburger" class="vh-100 vw-100 menu-ham display-none">
             <div class="row p-0 m-0 my-4">
                 
                 <span id="btn_menu_exit" type="button" class="material-symbols-outlined c-celeste-oscuro" style="font-size: 40px;">close</span> 

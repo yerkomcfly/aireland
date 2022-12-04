@@ -57,7 +57,7 @@ if(empty($_SESSION['rol']))
         include ("../PHP/filtro.php");
 
     ?>
-    <div class="container-fluid vh-100 p-0 ">
+    <div class="container-fluid vh-100 p-0 pt-5">
 
         <div class="row  p-0 m-0  h-100 d-flex justify-content-center pt-5">
             
@@ -75,7 +75,11 @@ if(empty($_SESSION['rol']))
                                 </div>                         
                             </div>
                         </div>
-                        
+                        <div class="col-12">
+                            <a href="../admin/agregar.php" class="btn decoration-0 text-white f-celeste my-4">
+                               <p class="montserrat bold-6 p-0 m-0 py-1">Agregar <i class="fa-solid fa-plus"></i></p> 
+                            </a>
+                        </div>
                     </div> 
                     <div class="col-12 col-lg-6  rounded-3 f-blanco shadow overflow-auto " style="height:80vh;">
                         <div class="row pt-3 px-3 border-bottom">
@@ -120,7 +124,7 @@ if(empty($_SESSION['rol']))
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                            <a href="../PHP/eliminar.php?id_producto=<?php echo $row['id_producto']?>&&sku=<?php echo $row['sku']?>&&op=1" type="button" class="btn btn-primary">Listo!</a>
+                                            <a href="../PHP/eliminar.php?id_producto=<?php echo $row['id_producto']?>&&sku=<?php echo $row['sku']?>&&color=<?php echo $row['color']?>&&op=1" type="button" class="btn btn-primary">Listo!</a>
                                         </div>
                                         </div>
                                     </div>
@@ -179,7 +183,7 @@ if(empty($_SESSION['rol']))
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
   </script>
     <script src="../public/procedimientos2.js"></script>
-
+    <script src="../public/menu_m_admin.js"></script>
 </body>
 
 

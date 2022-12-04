@@ -10,7 +10,7 @@ require 'phpmailer/Exception.php';
 
 
 if($_SERVER['REQUEST_METHOD'] != 'POST' ){
-    header("Location: ../paginas/contacto.html" );
+    header("Location: ../paginas/contacto.php" );
 }
 if (isset ($_POST['enviar']))
 {

@@ -136,30 +136,23 @@
             
     </div>
 
-    <div id="modal-menu-hamburger" class="vh-100 vw-100 display-none">
-                <div class="row p-0 m-0 my-4">
-                    
-                    <span id="btn_menu_exit" type="button" class="material-symbols-outlined c-celeste-oscuro" style="font-size: 40px;">close</span> 
+    <div id="modal-menu-hamburger" class="vh-100 vw-100 menu-ham display-none">
+            <div class="row p-0 m-0 my-4">
                 
-                </div>
-                <div class="row  p-0 m-0 mx-5">
-                    <a href="./tienda.php" class="text-center boton-nav-hamburger">
-                        <h5 type="button" class="montserrat  bold-4 py-4 border-bottom">
-                        <span class="material-symbols-outlined" style="position: relative; top:3px;">storefront</span> Tienda
-                    </h5></a>
-                    <a href="./cotizar.php" class="text-center boton-nav-hamburger">
+                <span id="btn_menu_exit" type="button" class="material-symbols-outlined c-celeste-oscuro" style="font-size: 40px;">close</span> 
+            
+            </div>
+            <div class="row  p-0 m-0 mx-5">
 
-                    <h5 type="button" class="montserrat bold-4 text-center py-4 border-bottom">
-                    <span class="material-symbols-outlined" style="position: relative; top:2px;">shopping_bag</span> Cotizar
-                    </h5></a>
-                    <a href="./contacto.php" class="text-center boton-nav-hamburger">
-
-                    <h5  type="button" class="montserrat bold-4 text-center py-4 border-bottom" >
-                        <span class="material-symbols-outlined" style="position: relative; top:4px;">mail</span> Contacto
-                    </h5></a>
-                </div>
-                            
-                
+                <h1 type="button" class="montserrat  bold-4 text-center boton-nav-hamburger py-4 border-bottom">
+                   <a href="./tienda.php?page=1" class="boton-nav-hamburger"><span class="material-symbols-outlined ">storefront</span> Tienda</h1></a>
+                <h1 type="button" class="montserrat  boton-nav-hamburger bold-4 text-center py-4 border-bottom">
+                    <a href="./cotizar.php" class="boton-nav-hamburger"><span class="material-symbols-outlined">shopping_bag</span>Cotizar</h1>
+                <h1  type="button" class="montserrat  boton-nav-hamburger bold-4 text-center py-4 border-bottom" >
+                    <a href="./contacto.php" class="boton-nav-hamburger"><span class="material-symbols-outlined">mail</span> Contacto</h1>
+            </div>
+                        
+            
     </div>
 
     <!--nav1-->
@@ -399,18 +392,19 @@
                                             if ($limit<=$cant && $cant2<=6)
                                             {    
                                             $sku = $row['sku'];
-                                            $query2 = "SELECT * FROM imagenes WHERE sku = '$sku' AND tipo_imagen='i_p'";
+                                            $color = $row['color'];
+                                            $query2 = "SELECT * FROM imagenes WHERE sku = '$sku' AND tipo_imagen='i_p' AND color='$color'";
                                             $resultado2 = $conexion->query($query2);
                                             $row2 = $resultado2->fetch_assoc();
                                     ?>
-                                            <div class="col-sm-6 col-xl-4 card_productos">
-                                                <div class="card  mb-5 p-0 border-0 shadow-sm">
-                                                    <img src="data:image/*;base64,<?php echo base64_encode($row2['imagen'])?>" class="card-img-top " alt="..." >
-                                                    <div class="card-body">
+                                            <div class="col-sm-6 col-xl-4 card_productos  ">
+                                                <div class="card  mb-5 p-0  shadow-sm border-0">
+                                                    <img src="data:image/*;base64,<?php echo base64_encode($row2['imagen'])?>" class="card-img-top object-1" alt="..." style="height:250px;">
+                                                    <div class="card-body ">
                                                         <h5 class="card-title montserrat bold-6"><?php echo $row['nombre_producto']?></h5>
                                                         <p class="card-text montserrat bold-5">9000 BTU/h</p>
                                                         <h5 class="montserrat bold-6 mt-3 mb-4">$ <?php echo $row['precio'];?></h5>
-                                                        <a href="./producto.php?id=<?php echo $row['id_producto'];?>" class=" boton2  position-absolute top-100 start-50 translate-middle" style="width: 150px; height: 40px;">
+                                                        <a href="./producto.php?sku=<?php echo $row['sku'];?>&&color=<?php echo $row['color'];?>" class=" boton2  position-absolute top-100 start-50 translate-middle" style="width: 150px; height: 40px;">
                                                             <h6 class="montserrat text-white text-center bold-5 pt-2 center-text border-0">Ver más +</h6>
                                                         </a>
                                                     </div>
@@ -570,6 +564,7 @@
   </script>
 
   <script type="module" src="../public/procedimientos2.js"></script>
+  <script type="module" src="../public/fo.js"></script>
 </body>
 
 

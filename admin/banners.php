@@ -27,10 +27,28 @@ if(empty($_SESSION['rol']))
 </head>
 
 <body class="fd-1">
-  <header>
+<header>
+    <button id="btn_h3" class="btn position-absolute text-white m-4 f-gris2" style="z-index:5; font-size:25px;"><i class="fa-solid fa-bars"></i></button>
+    <div id="menu3" class="p-0 m-0 pt-5 f-gris2 vh-100 m3 display-none" style="z-index: 1;">
+                    <div class="row p-0 m-0  px-4 mt-5 pt-5">
+                        <a href="./productos.php" class="h-1 decoration-0">
+                            <p class="montserrat bold-5 border-bottom">Productos</p>
+                        </a>
+                        
+                    </div>
+                    <div class="row p-0 m-0  px-4 mt-2">
+                        <a href="./banners.php" class="h-1 decoration-0">
+                            <p class="montserrat bold-5 border-bottom">Banners</p>
+                        </a>
+                    </div>               
+                    <div class="row w-100 p-0 m-0 px-4 mb-3  position-absolute bottom-0 start-0">
+                        <a href="../PHP/cs.php" class="h-1 decoration-0 ">
+                            <p class="montserrat bold-5">Cerrar Sesión <i class="fa-solid fa-right-from-bracket ms-1"></i></p>
+                        </a>
+                    </div>
+            </div>
     
-    
-  </header>
+</header>
 
   <main>
     <?php  
@@ -40,8 +58,8 @@ if(empty($_SESSION['rol']))
         $query = "SELECT * FROM imagenes WHERE tipo_imagen='i_b'";
         $resultado = $conexion->query($query);  
     ?>
-    <div class="container">
-        <div class="row p-0 m-0 mt-5 pb-4 border-bottom">
+    <div class="container pt-5">
+        <div class="row p-0 m-0 pt-5 pb-4 border-bottom">
 
             
                 <div class="col-12 col-lg-8  border position-relative" style="height: 400px;">
@@ -59,7 +77,7 @@ if(empty($_SESSION['rol']))
             while ($row = $resultado->fetch_assoc())
             {
         ?>
-                <div class="row p-0 m-0">
+                <div class="row p-0 m-0 mb-2">
                     <div class="col-8 p-0 m-0 mt-4" style="">
                         <img src="data:image/*;base64,<?php echo base64_encode($row['imagen']) ?>" alt="..." class="w-100 h-100">
                     </div>
@@ -111,7 +129,8 @@ if(empty($_SESSION['rol']))
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
   </script>
-    <script src="../public/busqueda.js"></script>
+    <script src="../public/procedimientos2.js"></script>
+    <script src="../public/menu_m_admin.js"></script>
 
 </body>
 

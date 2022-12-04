@@ -306,6 +306,7 @@ if(empty($_SESSION['rol']))
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
   </script>
     <script src="../public/busqueda.js"></script>
+    <script src="../public/menu_m_admin.js"></script>
 
 </body>
 

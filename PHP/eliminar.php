@@ -3,6 +3,7 @@
     
     $op=$_GET['op'];
     $id_producto=$_GET['id_producto'];
+    $color=$_GET['color'];
 
     if (!empty($_GET['id_producto'])&& $op!=2)
     {

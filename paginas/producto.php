@@ -19,30 +19,23 @@
 
 <body id="body_tienda">
     <header>
-        <div id="modal-menu-hamburger" class="vh-100 vw-100 display-none">
-                <div class="row p-0 m-0 my-4">
-                    
-                    <span id="btn_menu_exit" type="button" class="material-symbols-outlined c-celeste-oscuro" style="font-size: 40px;">close</span> 
+        <div id="modal-menu-hamburger" class="vh-100 vw-100 menu-ham display-none">
+            <div class="row p-0 m-0 my-4">
                 
-                </div>
-                <div class="row  p-0 m-0 mx-5">
-                    <a href="./tienda.php" class="text-center boton-nav-hamburger">
-                        <h5 type="button" class="montserrat  bold-4 py-4 border-bottom">
-                        <span class="material-symbols-outlined" style="position: relative; top:3px;">storefront</span> Tienda
-                    </h5></a>
-                    <a href="./cotizar.php" class="text-center boton-nav-hamburger">
+                <span id="btn_menu_exit" type="button" class="material-symbols-outlined c-celeste-oscuro" style="font-size: 40px;">close</span> 
+            
+            </div>
+            <div class="row  p-0 m-0 mx-5">
 
-                    <h5 type="button" class="montserrat bold-4 text-center py-4 border-bottom">
-                    <span class="material-symbols-outlined" style="position: relative; top:2px;">shopping_bag</span> Cotizar
-                    </h5></a>
-                    <a href="./contacto.php" class="text-center boton-nav-hamburger">
-
-                    <h5  type="button" class="montserrat bold-4 text-center py-4 border-bottom" >
-                        <span class="material-symbols-outlined" style="position: relative; top:4px;">mail</span> Contacto
-                    </h5></a>
-                </div>
-                            
-                
+                <h1 type="button" class="montserrat  bold-4 text-center boton-nav-hamburger py-4 border-bottom">
+                   <a href="./tienda.php?page=1" class="boton-nav-hamburger"><span class="material-symbols-outlined ">storefront</span> Tienda</h1></a>
+                <h1 type="button" class="montserrat  boton-nav-hamburger bold-4 text-center py-4 border-bottom">
+                    <a href="./cotizar.php" class="boton-nav-hamburger"><span class="material-symbols-outlined">shopping_bag</span>Cotizar</h1>
+                <h1  type="button" class="montserrat  boton-nav-hamburger bold-4 text-center py-4 border-bottom" >
+                    <a href="./contacto.php" class="boton-nav-hamburger"><span class="material-symbols-outlined">mail</span> Contacto</h1>
+            </div>
+                        
+            
         </div>
         <!--nav1-->
         <nav id="fondo_header" class="nav2 ">
@@ -110,13 +103,15 @@
         <?php
         error_reporting(0);
         include("../PHP/conexion.php");
-        $id = $_GET["id"];
+        $sku = $_GET["sku"];
         $color = $_GET["color"];
-        $query = "SELECT * FROM productos WHERE id_producto = '$id'";
+        $query = "SELECT * FROM productos WHERE sku = '$sku' AND color='$color'";
+
         $resultado = $conexion->query($query);
         $row = $resultado->fetch_assoc();
         $sku = $row['sku'];
-        $query = "SELECT * FROM imagenes WHERE sku = '$sku'";
+        $color = $row['color'];
+        $query = "SELECT * FROM imagenes WHERE sku = '$sku' AND color='$color'";
         $resultado2 = $conexion->query($query); 
         $resultado3 = $conexion->query($query); 
         $cont=0;
@@ -200,27 +195,46 @@
                         <h6 class="montserrat bold-4 mt-5 c-gris">Color</h6>
                         <div class="row">
                             <div class="col">
-
-                                <a href="./producto.php?id=<?php echo $row['id_producto']; ?>&&color=negro" type="submit">
-                                    <?php
-                                    if ($color == "negro") { ?>
-                                        <label id="input-radio" for="" class="input-negro borde-sombra"></label>
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <label id="input-radio" for="" class="input-negro "></label>
-                                    <?php } ?>
-                                </a>
-                                <a href="./producto.php?id=<?php echo $row['id_producto']; ?>&&color=blanco" type="submit">
-                                    <?php
-                                    if ($color == "blanco") { ?>
-                                        <label id="input-radio2" for="" class="input-blanco borde-sombra ms-1"></label>
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <label id="input-radio2" for="" class="input-blanco ms-1"></label>
-                                    <?php } ?>
-                                </a>
+                                <?php
+                                     $contador=0;
+                                     $query = "SELECT * FROM productos WHERE sku = '$sku'";
+                                     $resultado4 = $conexion->query($query); 
+                                     while ($row4 = $resultado4->fetch_assoc())
+                                     {
+                                        if ($row4['color']=='negro')
+                                        {
+                                ?>
+                                            <a href="./producto.php?sku=<?php echo $row['sku']; ?>&&color=negro" type="submit">
+                                            <?php
+                                            if ($color == "negro") { ?>
+                                                <label id="input-radio" for="" class="input-negro borde-sombra"></label>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <label id="input-radio" for="" class="input-negro "></label>
+                                            <?php } ?>
+                                            </a>
+                                <?php
+                                        }
+                                        else if ($row4['color']=='blanco')
+                                        {
+                                ?>
+                                            <a href="./producto.php?sku=<?php echo $row['sku']; ?>&&color=blanco" type="submit">
+                                            <?php
+                                            if ($color == "blanco") { ?>
+                                                <label id="input-radio2" for="" class="input-blanco borde-sombra ms-1"></label>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <label id="input-radio2" for="" class="input-blanco ms-1"></label>
+                                            <?php } ?>
+                                            </a>
+                                <?php            
+                                        }
+                                     }
+                                ?>
+                                
+                                
 
                             </div>
 
@@ -239,16 +253,16 @@
                                                 <h5 class="modal-title montserrat" id="exampleModalLabel"><?php echo $row['nombre_producto']?></h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <form action="../PHP/correos.php?op=3&&nombre_producto=<?php echo $row['nombre_producto'];?>&&id_producto=<?php echo $row['id_producto'];?>" method="POST" enctype="multipart/form-data">
+                                            <form action="../PHP/correos.php?op=3&&nombre_producto=<?php echo $row['nombre_producto'];?>&&id_producto=<?php echo $row['id_producto'];?>" method="POST">
                                                 <div class="modal-body px-5 mx-5">
                                                 
                                                             <div class="form-floating mt-2 ">
-                                                                <input type="text" class="form-control" name="correo" id="floatingInput" placeholder="Nombre" required>
+                                                                <input type="text" class="form-control" name="nombre" id="floatingInput" placeholder="Nombre" required>
                                                                 <label for="floatingInput"><p class="montserrat">Nombre</p></label>
                                                             </div>
                                                             <div class="form-floating mt-2 ">
-                                                                <input type="email" class="form-control" name="telefono" id="floatingInput" placeholder="+56975565522" required>
-                                                                <label for="text"><p class="montserrat">Telefono</p></label>
+                                                                <input type="text" class="form-control" name="telefono" id="floatingInput" placeholder="+56975565522" required>
+                                                                <label for="floatingInput"><p class="montserrat">Telefono</p></label>
                                                             </div>                                               
                                                 </div>
                                                 <div class="modal-footer d-flex justify-content-center border-0 mb-3">       

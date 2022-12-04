@@ -57,7 +57,8 @@
             "INSERT INTO `productos`(`id_marca`, `sku`, `nombre_producto`, `subtitulo`, `precio`, `descripcion`, `info_adicional`, `btu`, `tipo_producto`, `color`) 
             VALUES ('$id_marca','$sku','$nombre_producto','$subtitulo','$precio','".nl2br($descripcion)."','".nl2br($info_adicional)."','$btu','$tipo_producto','$color')";
             $resultado = mysqli_query($conexion,$query);  
-
+            header("Location: ../admin/productos.php");
+ 
         }
         
         if (!empty($_FILES['i_b']['tmp_name']))
@@ -74,8 +75,5 @@
         
       
 
-    
-
-    header("Location: ../admin/admin.php");
 
 ?>

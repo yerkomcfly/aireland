@@ -19,31 +19,24 @@
 
 <body class="f-blanco">
     <header>
-    <div id="modal-menu-hamburger" class="vh-100 vw-100 display-none">
-                <div class="row p-0 m-0 my-4">
-                    
-                    <span id="btn_menu_exit" type="button" class="material-symbols-outlined c-celeste-oscuro" style="font-size: 40px;">close</span> 
+        <div id="modal-menu-hamburger" class="vh-100 vw-100 menu-ham display-none">
+            <div class="row p-0 m-0 my-4">
                 
-                </div>
-                <div class="row  p-0 m-0 mx-5">
-                    <a href="./tienda.php" class="text-center boton-nav-hamburger">
-                        <h5 type="button" class="montserrat  bold-4 py-4 border-bottom">
-                        <span class="material-symbols-outlined" style="position: relative; top:3px;">storefront</span> Tienda
-                    </h5></a>
-                    <a href="./cotizar.php" class="text-center boton-nav-hamburger">
+                <span id="btn_menu_exit" type="button" class="material-symbols-outlined c-celeste-oscuro" style="font-size: 40px;">close</span> 
+            
+            </div>
+            <div class="row  p-0 m-0 mx-5">
 
-                    <h5 type="button" class="montserrat bold-4 text-center py-4 border-bottom">
-                    <span class="material-symbols-outlined" style="position: relative; top:2px;">shopping_bag</span> Cotizar
-                    </h5></a>
-                    <a href="./contacto.php" class="text-center boton-nav-hamburger">
-
-                    <h5  type="button" class="montserrat bold-4 text-center py-4 border-bottom" >
-                        <span class="material-symbols-outlined" style="position: relative; top:4px;">mail</span> Contacto
-                    </h5></a>
-                </div>
-                            
-                
-    </div>
+                <h1 type="button" class="montserrat  bold-4 text-center boton-nav-hamburger py-4 border-bottom">
+                   <a href="./tienda.php?page=1" class="boton-nav-hamburger"><span class="material-symbols-outlined ">storefront</span> Tienda</h1></a>
+                <h1 type="button" class="montserrat  boton-nav-hamburger bold-4 text-center py-4 border-bottom">
+                    <a href="./cotizar.php" class="boton-nav-hamburger"><span class="material-symbols-outlined">shopping_bag</span>Cotizar</h1>
+                <h1  type="button" class="montserrat  boton-nav-hamburger bold-4 text-center py-4 border-bottom" >
+                    <a href="./contacto.php" class="boton-nav-hamburger"><span class="material-symbols-outlined">mail</span> Contacto</h1>
+            </div>
+                        
+            
+        </div>
         <!--nav1-->
         <nav id="fondo_header" class="nav2 ">
             <div id="menu-pc" class="row p-0 m-0 py-3">
