@@ -45,17 +45,19 @@
                 <img src="../imagenes/logo.svg" alt="" style="height: 200px; width: 200px;">
             </div>
             <div id="login" class="col-8 col-md-7 col-lg-4 col-xl-3">
-                <form>
+                <form method="post">
                     <div class="mb-3 ">
                         <label for="exampleInputEmail1" class="form-label montserrat text-white">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label montserrat text-white">Password</label>
-                        <input type="password" class="form-control " id="exampleInputPassword1">
+                        <input type="password" class="form-control " id="exampleInputPassword1" name="pass">
                     </div>
-                    <button type="submit" class="btn f-celeste text-white montserrat">Iniciar Sesión</button>
-                </form>  
+                    <button type="submit" class="btn f-celeste text-white montserrat" name="is">Iniciar Sesión</button>
+                </form>
+                <?php include("../PHP/validar.php")?> 
+                  
             </div>
         </div>
         

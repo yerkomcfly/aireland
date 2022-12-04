@@ -132,9 +132,14 @@
         background-color: #23A6F0;
         
     }
+    .f-rosa
+    {
+        background-color: #f0234f;
+        
+    }
     .f-gris2
     {
-        background-color: #003246;
+        background-color: #252525;
         
     }
     .c-gris
@@ -289,6 +294,7 @@
     }
     .boton-nav-hamburger
     {
+
         text-decoration-line: none;
         color: #00272e;
         transition: all 0.2s;
@@ -359,8 +365,17 @@
         0%   {top:100vh;}
         100% {top:0vh;}
     }
-
-
+    .m3
+    {
+        width: 350px;
+        position: fixed;
+        animation-name: m3;
+        animation-duration: 0.5s;
+    }
+    @keyframes m3 {
+        0%   {left:-1000px;}
+        100% {left:0;}
+    }
 
 
 
@@ -691,12 +706,23 @@ background: linear-gradient(150deg, rgba(7,124,163,1) 0%, rgba(240,58,105,1) 100
         color: #ffffff;
         transition: all 0.2s;
     }
+    .hf-1
+    {
+        transition: all 0.2s;
+    }
+    .hf-1:hover
+    {
+        background-color: #500000;
+        transition: all 0.2s;
+    }
     .h-1:hover
     {
         color: #b1b1b1;
     }
     .decoration-0
     {
+        outline: none;
+        border: none;
         text-decoration-line: none;
     }
 
@@ -717,11 +743,14 @@ background: linear-gradient(150deg, rgba(7,124,163,1) 0%, rgba(240,58,105,1) 100
 
 
 
+    
 
 
 
-
-
+    @media (max-width: 991px)
+    {
+        
+    }
 
 
     @media (max-width: 766px)

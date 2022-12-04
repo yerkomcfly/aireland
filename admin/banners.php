@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(empty($_SESSION['rol'])) 
+{
+    header("location: ./login.php");
+    die();  
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -18,7 +26,7 @@
     
 </head>
 
-<body >
+<body class="fd-1">
   <header>
     
     
@@ -33,14 +41,17 @@
         $resultado = $conexion->query($query);  
     ?>
     <div class="container">
-        <div class="row">
-            <form action="../PHP/subir.php" method="post" enctype="multipart/form-data">
-                <div class="col-8 border position-relative" style="height: 400px;">
-                    <span class="material-symbols-outlined position-absolute top-50 start-50 translate-middle">add_photo_alternate</span>
+        <div class="row p-0 m-0 mt-5 pb-4 border-bottom">
+
+            
+                <div class="col-12 col-lg-8  border position-relative" style="height: 400px;">
+                    <form action="../PHP/subir.php" method="post" enctype="multipart/form-data">
+                        <span class="material-symbols-outlined position-absolute top-50 start-50 translate-middle text-white" style="font-size:60px;">add_photo_alternate</span>
                     <input type="file" class="border w-100 h-100" id="" name="i_b" accept="image/*" style="opacity: 50%;">          
                 </div>
-                <div class="col">
-                    <button type="submit">Subir</button> Resolcion recomendada: Altura = 700px Ancho: 2048px
+                <div class="col d-flex align-items-center px-4">
+                    <button class="btn f-celeste montserrat text-white bold-6" type="submit">Subir</button> 
+                    <p class="text-white montserrat m-4">(Resolución recomendada: Altura = 700px Ancho: 2048px)</p>
                 </div>
             </form>
         </div>
@@ -48,12 +59,14 @@
             while ($row = $resultado->fetch_assoc())
             {
         ?>
-                <div class="row">
-                    <div class="col-8 border" style="">
+                <div class="row p-0 m-0">
+                    <div class="col-8 p-0 m-0 mt-4" style="">
                         <img src="data:image/*;base64,<?php echo base64_encode($row['imagen']) ?>" alt="..." class="w-100 h-100">
                     </div>
-                    <div class="col-4 border">
-                    <a href="../PHP/eliminar.php?id_imagen=<?php echo $row['id_imagen']?>&&op=3"><span class="material-symbols-outlined">delete</span></a>
+                    <div class="col-4 p-0 m-0 d-flex align-items-center px-4">
+                        <a class="btn decoration-0 text-white montserrat pb-2 f-rosa hf-1" href="../PHP/eliminar.php?id_imagen=<?php echo $row['id_imagen']?>&&op=3">
+                            <p class="mb-1 bold-6">Borrar <span class="material-symbols-outlined position-relative" style="top:5px;">delete</span></p>
+                        </a>
                     </div>
                 </div>
         <?php 

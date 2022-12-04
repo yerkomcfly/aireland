@@ -122,7 +122,7 @@
 
   <main>
      <?php  
-        //error_reporting(0);
+        error_reporting(0);
         include ("./PHP/conexion.php");
         //include ("../PHP/filtro.php");
         $query = "SELECT * FROM imagenes WHERE tipo_imagen='i_b'";
@@ -192,7 +192,7 @@
     <!--QUEHACEMOS-->
         <div class="row mt-2 p-0 f-blanco" >
             <div class="col-md-6 col-xl-4 tarjeta1 px-2  pt-2 ps-xl-2 px-sm-2 pe-md-0" style="height: 450px;">
-                <div class="row h-100 w-100 f-negro p-0 m-0"><img src="imagenes/quehacemos/image-5.svg" alt="" class="h-100 w-100 p-0" style="opacity:65%;"></div>
+                <div class="row h-100 w-100 f-negro p-0 m-0"><img src="./imagenes/quehacemos/image-5.svg" alt="" class="h-100 w-100 p-0" style="opacity:65%;"></div>
                 <div class="row position-absolute bottom-0 end-0 mb-4 me-5 pe-3">
                     <div class="row m-0 i-1 "><h2 class="montserrat mx-4 text-white i-1 bold-7">Climatización Hogar</h2></div>
                     <div class="row m-0 i-1">
@@ -203,7 +203,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-4 tarjeta1 px-2  pt-2 px-xl-2 px-sm-2" style="height: 450px;">
-                <div class="row h-100 w-100 f-negro p-0 m-0"><img src="imagenes/quehacemos/image-6.svg" alt="" class="h-100 w-100 p-0" style="opacity:65%;"></div>
+                <div class="row h-100 w-100 f-negro p-0 m-0"><img src="./imagenes/quehacemos/image-6.svg" alt="" class="h-100 w-100 p-0" style="opacity:65%;"></div>
                 <div class="row position-absolute bottom-0 end-0 mb-4">
                     <div class="row m-0 i-1"><h2 class="montserrat mx-4 text-white i-1 bold-7">Mantenciones</h2></div>
                     <div class="row m-0 i-1">
@@ -214,7 +214,7 @@
                 </div>
             </div>
             <div class="col-md-12 col-xl-4 tarjeta1 px-2 pt-2 pe-xl-2 ps-xl-0 px-sm-2" style="height: 450px;">
-                <div class="row h-100 w-100 f-negro p-0 m-0"><img src="imagenes/quehacemos/7.jpg" alt="" class="h-100 w-100 p-0" style="opacity:65%;"></div>
+                <div class="row h-100 w-100 f-negro p-0 m-0"><img src="./imagenes/quehacemos/7.jpg" alt="" class="h-100 w-100 p-0" style="opacity:65%;"></div>
                 <div class="row position-absolute bottom-0 end-0 mb-4">
                     <div class="row m-0 i-1"><h2 class="montserrat mx-4 text-white i-1 bold-7 pe-5">Climatización Industrial</h2></div>
                     <div class="row m-0 i-1">
@@ -225,7 +225,7 @@
                 </div>
             </div>
             <div class="col-md-12 col-xl-12 tarjeta1 p-2 "  style="height: 450px;">
-                <div class="row h-100 w-100 f-negro p-0 m-0"><img src="imagenes/quehacemos/8.jpg" alt="" class="h-100 w-100 p-0" style="opacity:65%;"></div>
+                <div class="row h-100 w-100 f-negro p-0 m-0"><img src="./imagenes/quehacemos/8.jpg" alt="" class="h-100 w-100 p-0" style="opacity:65%;"></div>
                 <div class="row m-0 mt-4 px-4 position-absolute top-50 start-0 translate-middle-y  w-100">
                     <div class="row m-0 i-1 ">
                         <h1  class="montserrat mx-4 text-white i-1 bold-7 d-flex justify-content-end">¿Eres instalador?</h1>

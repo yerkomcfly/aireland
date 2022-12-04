@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(empty($_SESSION['rol'])) 
+{
+    header("location: ./login.php");
+    die();  
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -18,7 +26,7 @@
     
 </head>
 
-<body >
+<body class="fd-2">
   <header>
     
     
@@ -35,102 +43,139 @@
         $row = mysqli_fetch_array($resultado);
         $sku = $row['sku'];
         $consulta = "SELECT * FROM imagenes WHERE sku = '$sku'"  ;
-        $resultado = mysqli_query($conexion, $consulta);
+        $resultado2 = mysqli_query($conexion, $consulta);
+        $resultado3 = mysqli_query($conexion, $consulta);
         $cont=0;
         $cont2=0;
     ?>
     <div class="container">
-        <div class="row p-0 m-0">
-            <form id="edit_admin" action="../PHP/editar.php?id_producto=<?php echo $row['id_producto']?>&&id_imagen=<?php echo $row['id_imagen']?>" method="POST" enctype="multipart/form-data">
+        <div class="row p-0 m-0 my-5">
+                <div class="col- p-0 m-0" style="width: 507px;">
+                    <div class="row ">
+                        <form id="edit_admin" action="../PHP/editar.php?id_producto=<?php echo $row['id_producto']?>&&id_imagen=<?php echo $row['id_imagen']?>" method="POST" enctype="multipart/form-data">
 
-            <div class="row p-0 m-0" >
-                    <?php while($row2 = mysqli_fetch_array($resultado)){?>
-
-                    <?php if($row2['tipo_imagen']=="i_p"){ $cont2++;?>
-                        <div class="col- border border-danger p-0 m-0" style="height: 507px; width: 507px;">
-                            <img src="data:image/*;base64,<?php echo base64_encode($row2['imagen']) ?>" alt="..." class="w-100 h-100">
-                        </div>
-                        <div class="col-2 border">
-                            <a href="../PHP/eliminar.php?id_producto=<?php echo $row['id_producto']?>&&id_imagen=<?php echo $row2['id_imagen']?>&&op=2"><span class="material-symbols-outlined">delete</span></a>
-                        </div>
+                    <?php   while($row2 = mysqli_fetch_array($resultado2)){$cont++;
+                                if($row2['tipo_imagen']=="i_p" && !empty($row2['imagen'])){
+                    ?>              <div class="row p-0 m-0 d-flex justify-content-center">
+                                        <div class="row p-0 m-0 f-blanco" style="height: 507px; width: 507px;">
+                                            <img src="data:image/*;base64,<?php echo base64_encode($row2['imagen']) ?>" alt="..." class="w-100 h-100 ">
+                                        </div>
+                                        <div class="row p-0 m-0 f-rosa  hf-1">
+                                            <a class="btn decoration-0 text-white montserrat pb-2" href="../PHP/eliminar.php?id_producto=<?php echo $row['id_producto']?>&&id_imagen=<?php echo $row2['id_imagen']?>&&op=2">
+                                             <p class="mb-1 bold-6">Borrar <span class="material-symbols-outlined position-relative" style="top:5px;">delete</span></p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
                     <?php 
-                        }
-                        if ($cont2==0)
-                        {
+                                }
+                                if ($cont==0)
+                                {
                     ?>
-                        <div class="col- border border-danger p-0 m-0" style="height: 507px; width: 507px;">
-                        </div>
-                        <div class="col-2 border">
-                            <input type="file" class="form-control" id="inputGroupFile01" name="i_p" accept="image/*">          
-                        </div>
-                    <?php }?>
-                <div class="col-12 border p-0 m-0">
-                    <?php if($row2['tipo_imagen']=="i_s"){ $cont++;?>
-                            <div class="row border p-0 m-0">
-                                <div class="col-1 border border-danger p-0 m-0" style="height: 95px; width: 110px;">
-                                    <img src="data:image/*;base64,<?php echo base64_encode($row2['imagen']) ?>" alt="..." class="w-100 h-100 border">
+                                    <div class="row p-0 m-0" style="height: 507px; width: 507px;">
+                                        ICONO
+                                    </div>
+                                    <div class="row-2 p-0">
+                                        <div class="col-3">
+                                            <input type="file" class="form-control" id="inputGroupFile01" name="i_p" accept="image/*" required>   
+                                        </div>
+                                                 
+                                    </div>
+                    <?php       }
+                            }
+                    ?>
+                    </div>
+                </div>
+                <div class="col p-0 m-0 px-4">
+                    <?php   $cont=0;
+                            while ($row3 = mysqli_fetch_array($resultado3)){
+                                if($row3['tipo_imagen']=="i_s"){ $cont++;?>
+                                <div class="row p-0 m-0">
+                                    <div class="col-1 p-0 m-0" style="height: 95px; width: 110px;">
+                                        <img src="data:image/*;base64,<?php echo base64_encode($row3['imagen']) ?>" alt="..." class="w-100 h-100">
 
+                                    </div>
+                                    <div class="col d-flex align-items-center ">
+                                        <a class="btn decoration-0 text-white montserrat pb-2 f-rosa hf-1" href="../PHP/eliminar.php?id_producto=<?php echo $row['id_producto']?>&&id_imagen=<?php echo $row3['id_imagen']?>&&op=2">
+                                            <p class="mb-1 bold-6">Borrar <span class="material-symbols-outlined position-relative" style="top:5px;">delete</span></p>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="col border">
-                                    <a href="../PHP/eliminar.php?id_producto=<?php echo $row['id_producto']?>&&id_imagen=<?php echo $row2['id_imagen']?>&&op=2"><span class="material-symbols-outlined">delete</span></a>
+                    <?php       }
+                             } 
+                            while ($cont<4)
+                            {
+                                $cont++;      
+                    ?>
+                                <div class="row p-0 m-0">
+                                    <div class="col-1 border p-0 m-0" style="height: 95px; width: 110px;">
+
+                                    </div>
+                                    <div class="col d-flex align-items-center">
+                                        <input type="file" class="form-control" id="inputGroupFile01" name="i_s_a[]" accept="image/*">          
+                                    </div>
                                 </div>
-                            </div>
                     <?php   }
-                        } 
-                        while ($cont<4)
-                        {
-                        $cont++;      
-                    ?>
-                        <div class="row border p-0 m-0">
-                            <div class="col-1 border border-danger p-0 m-0" style="height: 95px; width: 110px;">
-
-                            </div>
-                            <div class="col-4 border">
-                                <input type="file" class="form-control" id="inputGroupFile01" name="i_s_a[]" accept="image/*">          
-                            </div>
-                        </div>
-                    <?php
-                        }
                     ?>
                 </div>
-            
-            
-             
-
-
-                <div class="col-12 p-0 m-0">
-                    <input type="file" class="form-control" id="inputGroupFile01" name="archivo">
-
-                </div>
-            </div>
-
-
-            
-            <div class="col-12 border p-0 m-0">
+        </div>
+        <div class="row p-0 m-0">
                 <div class="row p-0 m-0">
-                        <div class="col-12 border p-0 m-0">
-                            <input name="sku" type="text" value="<?php echo $row['sku'] ?>">
+                        <div class="col-1 p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">SKU</p>
+                            <input class="form-control" name="sku" type="text" value="<?php echo $row['sku'] ?>" required>
                         </div>
-                        <div class="col-12 border p-0 m-0">
-                            <input name="nombre_producto" type="text" value="<?php echo $row['nombre_producto'] ?>">
+                        <div class="col-5  p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Nombre</p>
+
+                            <input class="form-control" name="nombre_producto" type="text" value="<?php echo $row['nombre_producto'] ?>">
                         </div>
-                        <div class="col-12 border p-0 m-0">
-                            <input name="subtitulo" type="text" value="<?php echo $row['subtitulo'] ?>">
+                        <div class="col-5  p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Subtitulo</p>
+
+                            <input class="form-control" name="subtitulo" type="text" value="<?php echo $row['subtitulo'] ?>">
                         </div>
-                        <div class="col-12 border p-0 m-0">
-                            <input name="precio" type="text" value="<?php echo $row['precio']?>">
+                        <div class="col-2  p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">$ Precio</p>
+                            <input class="form-control" name="precio" type="text" value="<?php echo $row['precio']?>">
                         </div>
-                        <div class="col-2 border p-0 m-0">
-                            <select name="btu" class="form-select" aria-label="Default select example">
-                                <option value="<?php echo $row['btu'] ?>" selected><?php echo $row['btu'] ?></option>
-                                <option value="9000">9000</option>
-                                <option value="12000">12000</option>
-                                <option value="18000">18000</option>
-                                <option value="24000">24000</option>
+                        <div class="col-1  p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">BTU</p>
+
+                            <select name="btu" class="form-control" aria-label="Default select example">
+                                <?php
+                                    if ($row['btu']==9000){?>
+                                        <option value="9000" selected>9000</option>
+                                        <option value="12000">12000</option>
+                                        <option value="18000">18000</option>
+                                        <option value="24000">24000</option>
+                                <?php }
+                                    else if ($row['btu']==12000){?>
+                                        <option value="9000" >9000</option>
+                                        <option value="12000" selected>12000</option>
+                                        <option value="18000">18000</option>
+                                        <option value="24000">24000</option>
+                                <?php }
+                                    else if ($row['btu']==18000){?>
+                                        <option value="9000" >9000</option>
+                                        <option value="12000">12000</option>
+                                        <option value="18000" selected>18000</option>
+                                        <option value="24000" >24000</option>
+                                <?php }
+                                    else if ($row['btu']==24000){?>
+                                        <option value="9000" >9000</option>
+                                        <option value="12000">12000</option>
+                                        <option value="18000">18000</option>
+                                        <option value="24000" selected>24000</option>
+                                <?php }
+                                ?>                               
+                                
                             </select>
                         </div>
-                        <div class="col-2 border p-0 m-0">
-                            <select name="tipo_producto" class="form-select" aria-label="Default select example">
+                        <div class="col-1  p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Tipo</p>
+
+                            <select name="tipo_producto" class="form-control" aria-label="Default select example">
                                     <?php 
                                         if($row['tipo_producto']=="onoff"){?>
                                             <option  value="onoff" selected>ON/OFF</option>
@@ -143,8 +188,10 @@
                                     ?>
                             </select>
                         </div>
-                        <div class="col-2 border p-0 m-0">
-                            <select name="id_marca" class="form-select" aria-label="Default select example">
+                        <div class="col-1  p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Marca</p>
+
+                            <select name="id_marca" class="form-control" aria-label="Default select example">
                                     <?php 
                                         if($row['id_marca']=="1"){?>
                                             <option  value="1" selected>Kendal</option>
@@ -165,8 +212,10 @@
                                 
                             </select>
                         </div>
-                        <div class="col-2 border p-0 m-0">
-                            <select name="color" class="form-select" aria-label="Default select example">
+                        <div class="col-1  p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Color</p>
+
+                            <select name="color" class="form-control" aria-label="Default select example">
                                     <?php 
                                         if($row['color']=="blanco"){?>
                                             <option  value="blanco" selected>Blanco</option>
@@ -181,32 +230,36 @@
                                 
                             </select>
                         </div>
-                        <div class="col-12 border p-0 m-0">
+                        <div class="col-12  p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Descripción</p>
+
                             <?php
                                 $string2 = $row['descripcion'];
                                 $string2 = str_replace("<br />","",$string2);           
                             ?>
 
-                            <textarea name="descripcion" type="text" value="<?php echo $string2?>"><?php echo $string2?></textarea>
+                            <textarea class="form-control" name="descripcion" type="text" value="<?php echo $string2?>"><?php echo $string2?></textarea>
 
                         </div>
-                        <div class="col-12 border p-0 m-0">
+                        <div class="col-12  p-0 m-0 px-2 mt-2">
+                            <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Información adicional</p>
+
                             <?php
                                 $string = $row['info_adicional'];
                                 $string = str_replace("<br />","",$string);           
                             ?>
-                            <textarea name="info_adicional" type="text" value="<?php echo $string?>"><?php echo $string?></textarea>
+                            <textarea class="form-control" name="info_adicional" type="text" value="<?php echo $string?>"><?php echo $string?></textarea>
 
                         </div>
-                        <div class="col-12 border p-0 m-0">
-                            <button type="submit" name="guardar">Guardar</button>
+                        <div class="col-12  p-0 m-0 px-2 my-4">
+                            <button class="btn f-celeste text-white montserrat" type="submit" name="guardar">Guardar</button>
                         </div>
-                        </form>
-
                 </div>
-            </div>
+                </form>
         </div>
-    </div>        
+            
+    </div>
+      
  
         
 

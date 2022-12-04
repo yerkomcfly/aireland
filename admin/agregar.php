@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(empty($_SESSION['rol'])) 
+{
+    header("location: ./login.php");
+    die();  
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -18,7 +26,7 @@
     
 </head>
 
-<body >
+<body class="fd-1">
   <header>
     
     
@@ -32,48 +40,88 @@
         
     ?>
     <div class="container">
-        <div class="row">
+        <div class="row p-0 m-0 py-5">
+            <div class="col-6">
+                <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Imagen de portada</p>
 
                 <form id="edit_admin" action="../PHP/subir.php" method="POST" enctype="multipart/form-data">
-                    <input type="file" class="form-control" id="inputGroupFile01" name="i_p" accept="image/*">
-                    <input type="file" class="form-control" id="inputGroupFile01" name="i_s[]" accept="image/*">
-                    <input type="file" class="form-control" id="inputGroupFile01" name="i_s[]" accept="image/*">
-                    <input type="file" class="form-control" id="inputGroupFile01" name="i_s[]" accept="image/*">
-                    <input type="file" class="form-control" id="inputGroupFile01" name="i_s[]" accept="image/*">
-                            <input name="sku" type="text" placeholder="sku">
-                            <input name="nombre_producto" type="text" placeholder="nombre_producto">
-                            <input name="subtitulo" type="text" placeholder="subtitulo">
-                            <input name="precio" type="text" placeholder="precio">
-                            <select name="btu" class="form-select" aria-label="Default select example"> 
-                                <option selected>BTU</option>
-                                <option value="9000">9000</option>
-                                <option value="12000">12000</option>
-                                <option value="18000">18000</option>
-                                <option value="24000">24000</option>
-                            </select>
-                            <select name="tipo_producto" class="form-select" aria-label="Default select example">  
+                <input type="file" class="form-control" id="inputGroupFile01" name="i_p" accept="image/*" required>
+            </div>
+            <div class="col-6">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Imagenes secundarias</p>
+
+              <input type="file" class="form-control" id="inputGroupFile01" name="i_s[]" accept="image/*">
+              <input type="file" class="form-control" id="inputGroupFile01" name="i_s[]" accept="image/*">
+              <input type="file" class="form-control" id="inputGroupFile01" name="i_s[]" accept="image/*">
+              <input type="file" class="form-control" id="inputGroupFile01" name="i_s[]" accept="image/*">
+            </div>      
+            <div class="col-1 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">SKU</p>
+
+              <input class="form-control" name="sku" type="text" placeholder="sku" required>
+            </div> 
+            <div class="col-3 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Nombre</p>
+              <input class="form-control"  name="nombre_producto" type="text" placeholder="nombre_producto">
+            </div>
+            <div class="col-3 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Subtitulo</p>
+              <input class="form-control" name="subtitulo" type="text" placeholder="subtitulo">
+            </div>
+            <div class="col-2 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">$ Precio</p>
+              <input class="form-control" name="precio" type="text" placeholder="precio">
+            </div>
+            <div class="col-1 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">BTU</p>
+              <select  name="btu" class="form-control" aria-label="Default select example"> 
+                <option selected>BTU</option>
+                <option value="9000">9000</option>
+                <option value="12000">12000</option>
+                <option value="18000">18000</option>
+                <option value="24000">24000</option>
+              </select>
+            </div>       
+            <div class="col-2 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Tipo</p>
+                <select name="tipo_producto" class="form-control" aria-label="Default select example">  
                                 <option  selected>Tipo de producto</option>
                                 <option  value="onoff">ON/OFF</option>
                                 <option  value="inverter">Inverter</option>
                             </select>
-                            <select name="id_marca" class="form-select" aria-label="Default select example">
+            </div>  
+            <div class="col-1 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Marca</p>
+              <select name="id_marca" class="form-control" aria-label="Default select example">
                                 <option  selected>Marca</option>
                                 <option  value="1">Kendal</option>
                                 <option  value="2">AKL</option>
                                 <option  value="3">Heinsense</option>
                             </select>
-                            <select name="color" class="form-select" aria-label="Default select example">
+            </div>
+            <div class="col-1 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Color</p>
+              <select name="color" class="form-control" aria-label="Default select example">
                                 <option  selected>Color</option>
                                 <option  value="blanco">Blanco</option>
                                 <option  value="negro">Negro</option>
                             </select>
-                            <textarea name="descripcion" type="text" placeholder="descripcion"></textarea>
-                            <textarea name="info_adicional" type="text" placeholder="info_adicional"></textarea>
-                            <button type="submit" name="guardar">Guardar</button>
+            </div>
+            <div class="col-12 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Descripción</p>
+              <textarea class="form-control" name="descripcion" type="text" placeholder="descripcion"></textarea>
+            </div>              
+            <div class="col-12 p-0 m-0 px-2 mt-3">
+              <p class="p-0 m-0 text-white montserrat bold-6 border-bottom mb-3">Información adicional</p>
+              <textarea class="form-control" name="info_adicional" type="text" placeholder="info_adicional"></textarea>
+            </div>
+             <div class="col-12 p-0 m-0 px-2 mt-3">
+              <button class="btn montserrat text-white f-celeste" type="submit" name="guardar">Subir</button>
+
+            </div>               
                 </form>
 
-                </div>
-            </div>
+          
         </div>
     </div>        
  
