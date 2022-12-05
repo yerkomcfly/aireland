@@ -2,9 +2,10 @@
 session_start();
 if(empty($_SESSION['rol'])) 
 {
-    header("location: ./login.php");
+    header("location: ./index.php");
     die();  
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,10 +31,10 @@ if(empty($_SESSION['rol']))
 <body class="fd-2">
 
 <header>
-    <div class="container-fluid">
+    <div class="container-fluid position-absolute">
         <div class="row d-flex justify-content-end">
-            <div class="col-12 mt-4 me-5 d-flex justify-content-end">
-                <a href="../PHP/cs.php" class="h-1 decoration-0">
+            <div class="col-12 pt-3 me-5 d-flex justify-content-end">
+                <a href="../PHP/cerrar_sesion.php" class="h-1 decoration-0" name="cs">
                     <p class="montserrat bold-6">Cerrar Sesión <i class="fa-solid fa-right-from-bracket ms-1"></i></p>
                 </a>
             </div>
@@ -45,7 +46,7 @@ if(empty($_SESSION['rol']))
 
     <main>
         <div class="container vh-100">
-            <div class="row h-100  d-flex align-items-center">
+            <div class="row h-100 py-5 d-flex align-items-center">
                 <div class="col-12 col-md-6  " style="height: 400px;">
                     <a href="./productos.php" class="btn border border-4 h-100 w-100 f-celeste" style="border-radius: 40px;">
                         <div class="row h-100">

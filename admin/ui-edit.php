@@ -27,10 +27,28 @@ if(empty($_SESSION['rol']))
 </head>
 
 <body class="fd-2">
-  <header>
+<header>
+    <button id="btn_h3" class="btn position-fixed text-white m-4 f-gris2" style="z-index:5; font-size:25px;"><i class="fa-solid fa-bars"></i></button>
+    <div id="menu3" class="p-0 m-0 pt-5 f-gris2 vh-100 m3 display-none">
+                    <div class="row p-0 m-0  px-4 mt-5 pt-5">
+                        <a href="./productos.php" class="h-1 decoration-0">
+                            <p class="montserrat bold-5 border-bottom">Productos</p>
+                        </a>
+                        
+                    </div>
+                    <div class="row p-0 m-0  px-4 mt-2">
+                        <a href="./banners.php" class="h-1 decoration-0">
+                            <p class="montserrat bold-5 border-bottom">Banners</p>
+                        </a>
+                    </div>               
+                    <div class="row w-100 p-0 m-0 px-4 mb-3  position-absolute bottom-0 start-0">
+                        <a href="../PHP/cerrar_sesion.php" class="h-1 decoration-0 ">
+                            <p class="montserrat bold-5">Cerrar Sesión <i class="fa-solid fa-right-from-bracket ms-1"></i></p>
+                        </a>
+                    </div>
+            </div>
     
-    
-  </header>
+</header>
 
   <main>
     <?php  
@@ -49,8 +67,8 @@ if(empty($_SESSION['rol']))
         $cont2=0;
     ?>
     <div class="container">
-        <div class="row p-0 m-0 my-5">
-                <div class="col- p-0 m-0" style="width: 507px;">
+        <div class="row p-0 m-0 py-5">
+                <div class="col- p-0 m-0 pt-5" style="width: 507px;">
                     <div class="row ">
                         <form id="edit_admin" action="../PHP/editar.php?id_producto=<?php echo $row['id_producto']?>&&id_imagen=<?php echo $row['id_imagen']?>" method="POST" enctype="multipart/form-data">
 

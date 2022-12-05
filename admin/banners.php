@@ -28,7 +28,7 @@ if(empty($_SESSION['rol']))
 
 <body class="fd-1">
 <header>
-    <button id="btn_h3" class="btn position-absolute text-white m-4 f-gris2" style="z-index:5; font-size:25px;"><i class="fa-solid fa-bars"></i></button>
+    <button id="btn_h3" class="btn position-fixed text-white m-4 f-gris2" style="z-index:5; font-size:25px;"><i class="fa-solid fa-bars"></i></button>
     <div id="menu3" class="p-0 m-0 pt-5 f-gris2 vh-100 m3 display-none" style="z-index: 1;">
                     <div class="row p-0 m-0  px-4 mt-5 pt-5">
                         <a href="./productos.php" class="h-1 decoration-0">
@@ -42,7 +42,7 @@ if(empty($_SESSION['rol']))
                         </a>
                     </div>               
                     <div class="row w-100 p-0 m-0 px-4 mb-3  position-absolute bottom-0 start-0">
-                        <a href="../PHP/cs.php" class="h-1 decoration-0 ">
+                        <a href="../PHP/cerrar_sesion.php" class="h-1 decoration-0 ">
                             <p class="montserrat bold-5">Cerrar Sesión <i class="fa-solid fa-right-from-bracket ms-1"></i></p>
                         </a>
                     </div>

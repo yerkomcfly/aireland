@@ -257,16 +257,20 @@
                                                 <div class="modal-body px-5 mx-5">
                                                 
                                                             <div class="form-floating mt-2 ">
-                                                                <input type="text" class="form-control" name="nombre" id="floatingInput" placeholder="Nombre" required>
+                                                                <input type="text" class="form-control" name="nombre" id="floatingInput" placeholder="" required>
                                                                 <label for="floatingInput"><p class="montserrat">Nombre</p></label>
                                                             </div>
                                                             <div class="form-floating mt-2 ">
-                                                                <input type="text" class="form-control" name="telefono" id="floatingInput" placeholder="+56975565522" required>
+                                                                <input type="text" class="form-control" name="telefono" id="floatingInput" placeholder="" required>
                                                                 <label for="floatingInput"><p class="montserrat">Telefono</p></label>
+                                                            </div> 
+                                                            <div class="form-floating mt-2 ">
+                                                                <input type="email" class="form-control" name="correo" id="floatingInput" placeholder="" required>
+                                                                <label for="floatingInput"><p class="montserrat">Correo</p></label>
                                                             </div>                                               
                                                 </div>
                                                 <div class="modal-footer d-flex justify-content-center border-0 mb-3">       
-                                                    <button type="submit" class="boton2" style="width: 250px; height: 50px;" name="llamar">
+                                                    <button type="submit" class="boton2" style="width: 250px; height: 50px;" name="enviar">
                                                         <h6 class="montserrat text-white text-center bold-5 pt-2 border-0">Quiero que me llamen</h6>
                                                     </button>
                                                 </div>

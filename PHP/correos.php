@@ -14,6 +14,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST' ){
 }
 if (isset ($_POST['enviar']))
 {
+
     $op = $_GET['op'];
     
 
@@ -80,22 +81,31 @@ if (isset ($_POST['enviar']))
         }
         else if ($op == "3")
         {
+            //echo "entra";
             $nombre = $_POST['nombre'];
             $telefono = $_POST['telefono'];
+            $correo = $_POST['correo'];
             $nombre_producto = $_GET['nombre_producto'];
-            $id = $_GET['id'];
+            $id_producto = $_GET['id_producto'];
             //Recipients
-            $mail->setFrom($nombre,'LLAMAR!');
+            $mail->setFrom($correo,'LLAMAR!');
             $mail->addAddress('yerkomcfly@gmail.com');               //Name is optional
     
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = "LLAMAR!: $nombre, Telefono: $telefono";
             $mail->Body    = $nombre_producto;
-    
+
+            
             $mail->send();
-            echo 'Message has been sent';
-            header("Location: ../paginas/producto.php?id=$id");
+            //echo 'Message has been sent';
+            include("../PHP/conexion.php");
+            $query = "SELECT * FROM productos WHERE id_producto = '$id_producto'";
+            $resultado = $conexion->query($query);
+            $row = $resultado->fetch_assoc();
+            $sku=$row['sku'];
+            $color=$row['color'];
+            header("Location: ../paginas/producto.php?sku=$sku&&color=$color");
 
         }
 

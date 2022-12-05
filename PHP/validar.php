@@ -12,7 +12,7 @@
         if ($row_cnt==0)
         {
             //echo "entra1";
-            header("location: ../admin/login.php");
+            header("location: ../admin/index.php");
         }
             
         else
